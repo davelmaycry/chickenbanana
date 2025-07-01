@@ -1,38 +1,113 @@
+body {
+  background: #181a1b;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #181a1b;
+  color: #f5f6fa;
+  text-align: center;
+  padding: 40px 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  color: #ffe066;
+  text-shadow: 0 2px 8px #0008;
+}
+
+.choice-buttons {
+  margin-bottom: 32px;
+}
+
+.choice-buttons button {
+  margin: 0 12px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #23272f;
+  color: #ffe066;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.choice-buttons button:hover,
+.choice-buttons button:focus {
+  background: #ffe066;
+  color: #23272f;
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 60px);
+  grid-gap: 14px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+.tile {
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  background: #23272f;
+  border: 2px solid #23272f;
+  border-radius: 10px;
+  color: #ffe066;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0003;
+  outline: none;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tile:hover:not(:disabled),
+.tile:focus:not(:disabled) {
+  border-color: #ffe066;
+  background: #282c34;
+}
+
+.tile.clicked {
+  background: #ffe066;
+  color: #23272f;
+  border-color: #ffe066;
+  box-shadow: 0 2px 16px #ffe06644;
+}
+
+.tile:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 32px;
+}
+
+.result h2 {
+  color: #ffe066;
+  margin-bottom: 18px;
+}
+
+.result button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #23272f;
+  color: #ffe066;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.result button:hover,
+.result button:focus {
+  background: #ffe066;
+  color: #23272f;
 }
